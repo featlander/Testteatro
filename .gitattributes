@@ -1,0 +1,50 @@
+# ===============================================
+# Configuración Básica de LFS
+# ===============================================
+
+# Rastrea archivos binarios comunes y grandes
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.uproject filter=lfs diff=lfs merge=lfs -text
+
+# Archivos de caché de Unreal (necesarios para el source-built)
+*.pdb filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+
+# ===============================================
+# Archivos de Contenido (Content)
+# ===============================================
+
+# Texturas, Imágenes y PSDs (usados a menudo en el pipeline de UE)
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.tiff filter=lfs diff=lfs merge=lfs -text
+*.dds filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+
+# Mallas y Geometría 3D (FBX, OBJ, etc.)
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+
+# Archivos de Sonido y Audio (WAV, OGG, etc.)
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+
+# Archivos de Video (si se usan para texturas o cinemáticas)
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+
+# Archivos de caché y paquetes (menos comunes pero útiles si no están en .gitignore)
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.rar filter=lfs diff=lfs merge=lfs -text
+
+# ===============================================
+# Archivos Específicos de Desarrollo Móvil/VR (Android)
+# ===============================================
+
+# Archivos de instalación para pruebas (APKs, AABs, OBBS)
+# Aunque es común ignorarlos en .gitignore, si decides rastrearlos (no recomendado para el repositorio principal), deben ir a LFS.
+# *.apk filter=lfs diff=lfs merge=lfs -text
+# *.aab filter=lfs diff=lfs merge=lfs -text
+# *.obb filter=lfs diff=lfs merge=lfs -text
